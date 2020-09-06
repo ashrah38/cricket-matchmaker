@@ -26,7 +26,7 @@ mongoose.set("useCreateIndex", true);
 mongoose.set("useUnifiedTopology", true);
 mongoose
   .connect(
-    `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cricketmm.r81cs.mongodb.net/userInfo?retryWrites=true&w=majority`
+    `mongodb+srv://ashrah4:400201553@cricketmm.r81cs.mongodb.net/userInfo?retryWrites=true&w=majority`
   )
   .then(() => console.log("UserInfo connected"))
   .catch((err) => console.log(err));
