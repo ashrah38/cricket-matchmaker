@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cricket MatchMaker</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../public/assets/timings.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <span class="picture">
+        <img src="../public/assets/images/logo.PNG" alt="Sluralpright" />
+      </span>
+      <div class="nav-links-container">
+        <a href="/user/home" class="nav-links">Home</a>
+        <a href="/user/calendar" class="nav-links">Calendar</a>
+      </div>
+    </div>
+    <div class="container">
+      <form action="/user/timings" method="post">
+        <h1>
+          Choose your availability for <%= timingsDate %> <%= timingsMonth %>,
+          <%= timingsDay %>.
+        </h1>
+        <h3>Start time</h3>
+        <select name="startHours" id="startHours">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+        <select name="startMinutes" id="startMinutes">
+          <option value="00">00</option>
+          <option value="10">10</option>
+          <option value="20">20</option>
+          <option value="30">30</option>
+          <option value="40">40</option>
+          <option value="50">50</option>
+        </select>
+        <select name="startZone" id="startZone">
+          <option value="am">AM</option>
+          <option value="pm">PM</option>
+        </select>
+        <h3>End time</h3>
+        <select name="endHours" id="endHours">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+        <select name="endMinutes" id="endMinutes">
+          <option value="00">00</option>
+          <option value="10">10</option>
+          <option value="20">20</option>
+          <option value="30">30</option>
+          <option value="40">40</option>
+          <option value="50">50</option>
+        </select>
+        <select name="endZone" id="endZone">
+          <option value="am">AM</option>
+          <option value="pm">PM</option>
+        </select>
+        <button class="primary-btn" type="submit">Save</button>
+      </form>
+    </div>
+    <div class="alert" id="alert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';"
+        >&times;</span
+      >
+      <div id="errormsg"><%= errorMessage %></div>
+    </div>
+    <!-- javascript -->
+    <script src="../public/assets/timings.js"></script>
+  </body>
+</html>

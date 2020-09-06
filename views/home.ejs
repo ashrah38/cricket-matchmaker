@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../public/assets/home.css" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="../public/assets/FontAwesome/css/all.css" />
+  </head>
+  <body>
+    <!-- start of navbar -->
+    <div class="navbar">
+      <span class="picture">
+        <img src="../public/assets/images/logo.PNG" alt="Sluralpright" />
+      </span>
+      <div class="nav-links-container">
+        <a href="/user/home" class="nav-links">Home</a>
+        <a href="/user/calendar" class="nav-links">Calendar</a>
+        <div class="nav-links">
+          <i class="fas fa-chevron-circle-down nav-links" id="dropdown-btn"></i>
+        </div>
+      </div>
+    </div>
+    <!-- end of navbar -->
+
+    <!-- navbar dropdown -->
+    <div id="dropdown-menu" class="dropdown">
+      <div id="changepass-bar" class="bars">
+        <h5>Change Password</h5>
+        <i class="fas fa-exchange-alt nav-links"></i>
+      </div>
+      <div id="logout-bar" class="bars">
+        <h5>Logout</h5>
+        <i class="fas fa-sign-out-alt nav-links"></i>
+      </div>
+    </div>
+    <!-- end of navbar dropdown -->
+
+    <!-- start of the main display -->
+    <div class="container">
+      <h1>Welcome <%= firstName %></h1>
+      <!-- Add friends -->
+      <form action="" method="">
+        <h3>Add friends</h3>
+        <input type="text" name="name" id="name" placeholder="add by name" />
+        <h4>or</h4>
+        <input type="text" name="id" id="id" placeholder="add by username" />
+        <button type="submit" id="findfriends">find friends</button>
+      </form>
+      <!-- End of add friends -->
+
+      <!-- Displaying the friend you searched for -->
+      <form action="/user/home/friends/addfriend" method="POST">
+        <div id="friendsDisplay"></div>
+      </form>
+      <!-- End of friends display -->
+
+      <!-- display box for schedule of friends -->
+      <div id="schedule-display"></div>
+      <!-- end of display box for schedule of friends -->
+
+      <!-- showing matching availabilities -->
+      <div id="availabilities"></div>
+      <!-- end of availability showcase -->
+
+      <!-- Displaying list of added friends -->
+      <div class="friendlist">
+        <h3>Friend List</h3>
+        <% friendList.forEach((friend) => { %>
+        <div class="friend-box">
+          <img src="../public/assets/images/defaultdp.png" alt="" />
+          <h4><%= friend.firstName %> <%= friend.lastName %></h4>
+          <h5><%= friend.username %></h5>
+          <button type="submit" id="<%= friend.username %>" class="avail-btns">
+            Show availability
+          </button>
+        </div>
+        <% }) %>
+      </div>
+      <!-- End of friend list display -->
+    </div>
+    <!-- javascript -->
+    <script src="../public/assets/homepage.js"></script>
+  </body>
+</html>

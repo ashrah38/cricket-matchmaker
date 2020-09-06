@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Peta&display=swap");
+
+/* global variables */
+:root {
+  --calendar-font-family: "Lexend Peta", sans-serif;
+  --calendar-font-size: 0.8rem;
+}
+/* global styles */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  flex-direction: row;
+  height: 10vh;
+  background: linear-gradient(to right, #131313, black);
+  justify-content: space-between;
+}
+
+.navbar .picture {
+  width: 70px;
+  height: 100%;
+}
+
+.navbar .picture img {
+  width: 100%;
+}
+
+.navbar .nav-links-container {
+  display: flex;
+
+  width: 50%;
+  justify-content: flex-end;
+  margin-right: 1rem;
+}
+
+.nav-links {
+  display: flex;
+  text-decoration: none;
+  font-family: var(--calendar-font-family);
+  font-size: 1.5rem;
+  color: white;
+  align-items: center;
+  margin-left: 1rem;
+}
+/* end of navbar */
+
+/* container */
+.container {
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(to right, brown, black);
+}
+
+/* calendar dimensions */
+.calendar {
+  height: 90vh;
+  width: 1300px;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(7, 1fr);
+  background: linear-gradient(to right, #01301e, #42b4a0);
+  font-family: var(--calendar-font-family);
+  font-size: var(--calendar-font-size);
+  border-top: 4px solid black;
+}
+
+/* month box */
+.month-box {
+  grid-column: 1/5;
+  position: relative;
+  font-size: 2rem;
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+
+/* singular date-box */
+.date-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 2px;
+  border: 0.5px solid black;
+}
+
+.date-box:hover {
+  background: yellow;
+}
+/* end of singular date-box */
+
+/* button -> select timings */
+.calendar-btn {
+  margin: auto;
+  position: absolute;
+  bottom: 3px;
+  font-family: var(--calendar-font-family);
+  width: 100%;
+  margin-bottom: 0.4rem;
+  background: transparent;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s all;
+  outline: none;
+}
+
+.calendar-btn:hover {
+  font-size: 12px;
+}
+
+/* button -> next and prev */
+.primary-btn {
+  padding: 1px;
+  position: absolute;
+  top: 25px;
+  right: 2px;
+  width: 120px;
+  height: 35px;
+  border-radius: 10px;
+  font-family: var(--calendar-font-family);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s all;
+  outline: none;
+}
+
+.primary-btn:hover {
+  font-size: 15px;
+}
+
+#previous {
+  padding: 1px;
+  position: absolute;
+  top: 63px;
+  right: 2px;
+}
+
+/* schedule box */
+.schedule {
+  display: flex;
+  flex-direction: column;
+  padding: 3px;
+  font-family: var(--calendar-font-family);
+  font-size: 0.8rem;
+  align-items: center;
+  margin-left: 0.5rem;
+  border: 1px solid black;
+  background: linear-gradient(to bottom, #fffcd1, #42b4a0);
+  border-top: 4px solid black;
+  min-width: 200px;
+  overflow-y: scroll;
+}
+
+.single-slot {
+  border: 1px solid black;
+  margin: 3px;
+  width: 100%;
+  padding: 2px;
+  position: relative;
+}
+
+.close-icon {
+  color: red;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  cursor: pointer;
+}

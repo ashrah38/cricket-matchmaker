@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <!-- css styles -->
+    <link rel="stylesheet" href="../public/assets/register.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="showcase"></div>
+      <div id="left">
+        <div id="signin">
+          <div class="logo">
+            <img
+              src="https://image.ibb.co/hW1YHq/login-logo.png"
+              alt="Sluralpright"
+            />
+
+            <form action="/register" method="post">
+              <div>
+                <label for="firstName">First Name</label>
+                <input
+                  type="text"
+                  name="firstName"
+                  id="firstName"
+                  value="<%= typeof firstName != 'undefined' ? firstName : '' %> "
+                  class="text-input"
+                  required
+                />
+              </div>
+              <div>
+                <label for="lastName">Last Name</label>
+                <input
+                  type="text"
+                  name="lastName"
+                  id="lastName"
+                  value="<%= typeof lastName != 'undefined' ? lastName : '' %> "
+                  class="text-input"
+                  required
+                />
+              </div>
+              <div>
+                <label for="username">Username</label>
+                <input
+                  type="text"
+                  name="username"
+                  id="username"
+                  class="text-input"
+                  value="<%= typeof username != 'undefined' ? username : '' %> "
+                  required
+                />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  value="<%= typeof email != 'undefined' ? email : '' %> "
+                  class="text-input"
+                  required
+                />
+              </div>
+              <div>
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  class="text-input"
+                  minlength="8"
+                  required
+                />
+              </div>
+              <div>
+                <label for="password2">Confirm Password</label>
+                <input
+                  class="text-input"
+                  type="password"
+                  name="password2"
+                  id="password2"
+                  minlength="8"
+                  required
+                />
+              </div>
+              <button type="submit" class="primary-btn">Register!</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- alert -->
+    <div class="alert" id="alert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';"
+        >&times;</span
+      >
+      <div id="errormsg"><%= errorMessage %></div>
+    </div>
+    <!-- javascript -->
+    <script src="../public/assets/register.js"></script>
+  </body>
+</html>

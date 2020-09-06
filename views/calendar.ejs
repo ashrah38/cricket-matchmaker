@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../public/assets/calendar.css" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="../public/assets/FontAwesome/css/all.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <span class="picture">
+        <img src="../public/assets/images/logo.PNG" alt="Sluralpright" />
+      </span>
+      <div class="nav-links-container">
+        <a href="/user/home" class="nav-links">Home</a>
+        <a href="/user/calendar" class="nav-links">Calendar</a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="calendar"><%- html %></div>
+      <div class="schedule" id="scheduleBox">
+        <h4>Schedule</h4>
+      </div>
+    </div>
+    <!-- javascript -->
+    <script src="../public/assets/calendar.js"></script>
+  </body>
+</html>
