@@ -4,6 +4,7 @@
   "description": "A web application to connect friends and teammates and allow them to coordinate timings for cricket.",
   "main": "app.js",
   "scripts": {
+    "start": "node your-script.js",
     "devStart": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
