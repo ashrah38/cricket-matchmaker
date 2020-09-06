@@ -4,7 +4,6 @@ const router = express.Router();
 const passport = require("passport");
 const Users = require("../models/users.js");
 const connectEnsureLogin = require("connect-ensure-login");
-const { reset } = require("nodemon");
 const removeSpaces = require("../helper_functions/removeSpaces");
 let errorMessage = "";
 // GET - home page
