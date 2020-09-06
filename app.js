@@ -47,5 +47,10 @@ app.use("/user", require("./routes/user.js"));
 app.use("/user/home", require("./routes/home.js"));
 app.use("/", require("./routes/forgot_pass.js"));
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+app.listen(port);
 // Initializing the port
-app.listen(3000, () => console.log("Port Init"));
+app.listen(port, () => console.log("Port Init"));
