@@ -53,4 +53,3 @@ if (port == null || port == "") {
 }
 app.listen(port);
 // Initializing the port
-app.listen(port, () => console.log("Port Init"));
