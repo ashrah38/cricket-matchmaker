@@ -472,7 +472,7 @@ form button:hover {
     flex-direction: column;
     justify-content: flex-start;
     overflow-y: scroll;
-    width: 80%;
+    width: 85%;
     align-items: flex-end;
   }
   .friendlist {
@@ -517,6 +517,9 @@ form button:hover {
     right: 85%;
   }
   .nav-links {
+    font-size: 1.5rem;
+  }
+  .welcome-msg {
     font-size: 1.5rem;
   }
 }

@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Peta&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap");
 
 /* global variables */
 :root {
@@ -202,6 +204,9 @@ body {
 @media screen and (max-width: 950px) {
   .container {
     flex-direction: column;
+    position: absolute;
+    top: 10vh;
+    width: 100vw;
   }
   .calendar-btn {
     font-size: 0.5rem;
