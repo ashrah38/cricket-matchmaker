@@ -9,6 +9,25 @@ findfriendsBtn.addEventListener("click", (click) => {
   getFriends();
 });
 
+// ADD FRIEND FORM FUNCTIONALITY
+const friendForm = document.getElementById("friendform");
+const showfriendForm = document.getElementById("showfriendform");
+const toggleBtn = document.getElementById("toggle-btn");
+const smalltext = document.getElementById("smalltext");
+
+toggleBtn.addEventListener("click", () => {
+  if (friendForm.classList.contains("show-form")) {
+    friendForm.classList.remove("show-form");
+    showfriendForm.classList.remove("show-form");
+    smalltext.innerHTML = `Add <br> Friends`;
+  } else {
+    friendForm.classList.add("show-form");
+    showfriendForm.classList.add("show-form");
+    smalltext.innerHTML = "";
+    document.getElementById("friendsDisplay").innerHTML = "";
+  }
+});
+
 // DROPDOWN MENU FUNCTIONALITY
 const dropBtn = document.getElementById("dropdown-btn");
 const dropMenu = document.getElementById("dropdown-menu");
@@ -96,8 +115,12 @@ function getFriends() {
       "Content-type": "application/json; charset=UTF-8",
     },
   })
-    .then((response) => response.json())
-    .then((friendList) => displayFriends(friendList));
+    .then((response) => {
+      return response.json();
+    })
+    .then((friendList) => {
+      return displayFriends(friendList);
+    });
 }
 
 // FUNCTION TO DISPLAY THE FRIENDS OBTAINED FROM THE SEARCH
@@ -107,15 +130,23 @@ function displayFriends(friendList) {
   let lastName = document.getElementById("lastName");
   let username = document.getElementById("username");
   let displayBox = document.getElementById("friendsDisplay");
+  if (friendList.length == 0) {
+    return (displayBox.innerHTML += "No friends ");
+  }
   friendList.forEach((element) => {
     displayBox.innerHTML += `<div class="display-box">
+    <div>
+    <img src="../public/assets/images/defaultdp.png" alt="" />
+    </div>
+    <div>
     <h3 id="firstName">${element.firstName}</h3>
     <h3 id="lastName">${element.lastName}</h3>
     <h3 id="username">${element.username}</h3>
     <input type="hidden" name="username" value="${element.username}" />
     <input type="hidden" name="firstName" value="${element.firstName}" />
     <input type="hidden" name="lastName" value="${element.lastName}" />
-    <button type="submit"></button>
+    <button class="addfriend-btn" type="submit">Add Friend</button>
+    </div>
   </div>`;
   });
 }
@@ -167,7 +198,7 @@ function displayData() {
       availabilitiesDisplay.innerHTML += `<div class="a-single">
   <h5 class="title">${date}</h5>
   <h5 class="small-headline">The following are free to play: </h5>
-  <h6 class = "friend-names">${friendhtml}</h6>
+  <div class="friend-names">${friendhtml}</div>
 </div>`;
     }
   });
@@ -196,14 +227,20 @@ function displaySchedule() {
         .then((response) => response.json())
 
         .then((data) => {
-          scheduleDisplay.innerHTML = "";
+          scheduleDisplay.innerHTML = `<h2>${usernameForSchedule} availability</h2>`;
           data.schedule.forEach((entry) => {
-            scheduleDisplay.innerHTML = `
+            scheduleDisplay.innerHTML += `
       <div class="single-slot">
       <h4>${entry.date} ${entry.month}</h4>
       <h4>${entry.from} - ${entry.to}</h4>
       </div>`;
           });
+          scheduleDisplay.innerHTML += `<button class="scroll-btn">Friend's Schedule <i class="fas fa-location-arrow updown-btn"></i></button>`;
+          scheduleDisplay.classList.add("show-schedule");
+          setTimeout(
+            () => scheduleDisplay.classList.remove("show-schedule"),
+            3000
+          );
         });
     });
   });

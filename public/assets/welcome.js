@@ -4,5 +4,4 @@ const content = errorMsg.innerHTML;
 
 if (content == "") {
   alertBox.style.display = "none";
-  console.log("display hidden");
 }

@@ -104,7 +104,7 @@ router.post(
   }
 );
 
-// POST - submitting availability form
+// POST - submitting timings form
 router.post(
   "/timings",
   connectEnsureLogin.ensureLoggedIn("/login"),

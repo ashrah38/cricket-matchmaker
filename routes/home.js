@@ -25,7 +25,7 @@ router.post(
     function findFriends(firstName, lastName, username) {
       if (username != "") {
         Users.find({ username: username }).then((list) => {
-          return res.send(list);
+          return res.send(JSON.stringify(list));
         });
       } else if (firstName != "" && lastName == undefined) {
         Users.find({ firstName: firstName }).then((list) => {

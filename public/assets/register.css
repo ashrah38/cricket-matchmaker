@@ -14,6 +14,22 @@
   margin: 0;
 }
 
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+.backtologin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: 50px;
+  font-weight: 1000;
+  font-family: var(--calendar-font-family);
+}
+
 /* navbar */
 .navbar {
   display: flex;
@@ -106,9 +122,9 @@
   padding-bottom: 3rem;
 }
 #signin .logo {
-  /* Using margin bottom can also push objects DOWN */
-  /* Because it has to mantain that specific margin */
-  margin-bottom: 8vh;
+  height: 140px;
+  width: 140px;
+  overflow: hidden;
 }
 
 #signin .logo img {
@@ -191,21 +207,19 @@
 /* The alert message box */
 .alert {
   position: absolute;
-  top: 160px;
-  right: 20px;
+  top: 180px;
+  right: 9%;
   padding: 5px;
-  /* background-color: rgba(f4, 43, 36, 0.8); */
-  color: white;
-  font-family: var(--alert-font-family);
   border: 1px solid red;
   border-radius: 2px;
-  width: 400px;
-  color: red;
+  width: auto;
+  background-color: #f44336;
+  color: white;
+  font-family: "Lucida Console", Courier, monospace;
 }
 
 /* The close button */
 .closebtn {
-  margin-left: 15px;
   color: white;
   float: right;
   font-size: 16px;
@@ -217,4 +231,31 @@
 /* When moving the mouse over the close button */
 .closebtn:hover {
   color: black;
+}
+
+/* media queries */
+@media screen and (max-width: 800px) {
+  #showcase {
+    display: none;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .navbar {
+    display: none;
+  }
+  .container {
+    height: 100%;
+    overflow: scroll;
+  }
+  #left {
+    height: 100%;
+    margin-top: 1rem;
+  }
+  #showcase {
+    height: 100%;
+  }
+  #signin .logo {
+    display: none;
+  }
 }

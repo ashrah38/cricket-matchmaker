@@ -63,9 +63,36 @@ router.post("/register", (req, res, next) => {
             user.firstName = firstName;
             user.lastName = lastName;
             user.email = email;
-            user.save().then(() => res.send("Registered"));
+            user.save().then(() => {
+              const { username, password } = req.body;
+              passport.authenticate("local", (err, user, info) => {
+                if (err) {
+                  return next(err);
+                }
+                if (!user) {
+                  errorMessage = "Username or Password is incorrect";
+                  return res.render("welcome.ejs", { errorMessage });
+                }
+                req.logIn(user, (err) => {
+                  if (err) {
+                    return next(err);
+                  }
+
+                  return res.redirect("/user/home");
+                });
+              })(req, res, next);
+            });
           })
-          .catch((err) => console.log(err));
+          .catch((err) => {
+            errorMessage = "Username already in use.";
+            return res.render("register.ejs", {
+              firstName,
+              lastName,
+              username,
+              email,
+              errorMessage,
+            });
+          });
       }
     });
 });

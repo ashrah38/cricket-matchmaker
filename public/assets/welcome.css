@@ -4,6 +4,7 @@
 :root {
   --calendar-font-family: "Lexend Peta", sans-serif;
   --calendar-font-size: 0.8rem;
+  --alert-font-family: "Lucida Console", Courier, monospace;
 }
 /* global styles */
 * {
@@ -12,11 +13,17 @@
   margin: 0;
 }
 
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
 /* navbar */
 .navbar {
   display: flex;
   flex-direction: row;
-  height: 10vh;
+  height: 10%;
   background: linear-gradient(to right, #131313, black);
   justify-content: space-between;
 }
@@ -53,8 +60,8 @@
 .container {
   display: flex;
   flex-direction: row;
-  height: 90vh;
-  background: linear-gradient(#000000cc, rgba(0, 0, 0, 0.5)),
+  height: 90%;
+  background: linear-gradient(#000000, rgba(0, 0, 0, 0.5)),
     url("../assets/images/homepage-background.jpg") no-repeat center center;
   background-size: cover;
 }
@@ -82,6 +89,7 @@
   /* Need to assign height before using JC */
   /* JC allows us to centralize vertically */
   justify-content: center;
+  overflow: hidden;
 }
 
 #signin {
@@ -142,7 +150,7 @@
 .or,
 .links {
   /* Links slightly smaller area than the above */
-  width: 60%;
+  width: 70%;
 }
 
 #signin .links a {
@@ -193,7 +201,7 @@
 }
 
 .secondary-btn {
-  padding: 0.7rem 1rem;
+  padding: 0.7rem 0.4rem;
   height: 2.7rem;
   display: block;
   border: 1px solid #ffff;
@@ -214,20 +222,20 @@
 .alert {
   position: absolute;
   top: 260px;
-  right: 140px;
-  padding: 5px;
-  /* background-color: rgba(f4, 43, 36, 0.8); */
+  right: 20%;
+  padding: 2px;
+  background-color: #f44336;
   color: white;
-  font-family: var(--alert-font-family);
+  font-family: "Lucida Console", Courier, monospace;
   border: 1px solid red;
   border-radius: 2px;
-  width: 270px;
-  color: red;
+  width: auto;
+  color: white;
 }
 
 /* The close button */
 .closebtn {
-  margin-left: 15px;
+  margin-left: 2px;
   color: white;
   float: right;
   font-size: 16px;
@@ -239,4 +247,44 @@
 /* When moving the mouse over the close button */
 .closebtn:hover {
   color: black;
+}
+
+/* Media Queries */
+@media screen and (max-width: 800px) {
+  #showcase {
+    display: none;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .navbar {
+    display: none;
+  }
+  .container {
+    height: 100%;
+  }
+  #left {
+    height: 100%;
+  }
+  #showcase {
+    height: 100%;
+  }
+}
+
+@media screen and (max-height: 620px) {
+  .navbar {
+    display: none;
+  }
+  #signin .logo {
+    display: none;
+  }
+  .container {
+    height: 100%;
+  }
+  #signin {
+    height: 100%;
+  }
+  #left {
+    height: 100%;
+  }
 }

@@ -4,12 +4,16 @@ function checkTimes(startHour, startZone, endHour, endZone) {
     return false;
   }
   if (endZone == "am" && startZone == "am") {
-    if (endHour <= startHour) {
+    let endHourC = parseInt(endHour);
+    let startHourC = parseInt(startHour);
+    if (endHourC <= startHourC) {
       return false;
     }
   }
   if (endZone == "pm" && startZone == "pm") {
-    if (endHour <= startHour) {
+    let endHourC = parseInt(endHour);
+    let startHourC = parseInt(startHour);
+    if (endHourC <= startHourC) {
       return false;
     }
   }

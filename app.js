@@ -26,7 +26,7 @@ mongoose.set("useCreateIndex", true);
 mongoose.set("useUnifiedTopology", true);
 mongoose
   .connect(
-    `mongodb+srv://ashrah4:400201553@cricketmm.r81cs.mongodb.net/userInfo?retryWrites=true&w=majority`
+    `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cricketmm.r81cs.mongodb.net/userInfo?retryWrites=true&w=majority`
   )
   .then(() => console.log("UserInfo connected"))
   .catch((err) => console.log(err));
@@ -51,5 +51,5 @@ let port = process.env.PORT;
 if (port == null || port == "") {
   port = 3000;
 }
-app.listen(port);
+app.listen(port, () => console.log("Port Init"));
 // Initializing the port
