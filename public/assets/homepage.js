@@ -1,9 +1,9 @@
 const findfriendsBtn = document.getElementById("findfriends");
 const availabilitiesDisplay = document.getElementById("availabilities");
 const scheduleDisplay = document.getElementById("schedule-display");
-const urlFF = "http://www.cricketmatchmaker.com/user/home/friends";
-const urlDA = "http://www.cricketmatchmaker.com/user/home/availability";
-const urlGT = "http://www.cricketmatchmaker.com/user/home/timings";
+const urlFF = "http://localhost:3000/user/home/friends";
+const urlDA = "http://localhost:3000/user/home/availability";
+const urlGT = "http://localhost:3000/user/home/timings";
 findfriendsBtn.addEventListener("click", (click) => {
   click.preventDefault();
   getFriends();
@@ -44,15 +44,14 @@ dropBtn.addEventListener("click", () => {
 
 logoutBar.addEventListener("click", () => {
   console.log("event registered");
-  fetch("http://www.cricketmatchmaker.com/user/home/logout").then(
-    () => (window.location = "http://www.cricketmatchmaker.com/")
+  fetch("http://localhost:3000/user/home/logout").then(
+    () => (window.location = "http://localhost:3000/")
   );
 });
 
 changepassBar.addEventListener("click", () => {
-  fetch("http://www.cricketmatchmaker.com/user/changepassword").then(
-    () =>
-      (window.location = "http://www.cricketmatchmaker.com/user/changepassword")
+  fetch("http://localhost:3000/user/changepassword").then(
+    () => (window.location = "http://localhost:3000/user/changepassword")
   );
 });
 // END OF NAV BAR FUNCTIONS
@@ -215,7 +214,7 @@ function displaySchedule() {
     button.addEventListener("click", (e) => {
       let btnClicked = e.target;
       usernameForSchedule = btnClicked.id;
-      let urlDS = `http://www.cricketmatchmaker.com/user/home/schedule/${usernameForSchedule}`;
+      let urlDS = `http://localhost:3000/user/home/schedule/${usernameForSchedule}`;
       fetch(urlDS, {
         method: "POST",
         body: JSON.stringify({

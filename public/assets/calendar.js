@@ -1,4 +1,4 @@
-const url = "http://www.cricketmatchmaker.com/user/calendar/schedule";
+const url = "http://localhost:3000/user/calendar/schedule";
 const scheduleBox = document.getElementById("scheduleBox");
 let closeBtns = undefined;
 let cbArray = undefined;

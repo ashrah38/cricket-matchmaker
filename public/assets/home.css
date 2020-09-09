@@ -241,7 +241,7 @@ form button:hover {
   align-items: center;
   position: relative;
   z-index: 5;
-  bottom: 92%;
+  /* bottom: 92%; */
   transition: all 1s;
 }
 
@@ -326,7 +326,7 @@ form button:hover {
   cursor: pointer;
   position: relative;
   z-index: 5;
-  bottom: 92%;
+  /* bottom: 92%; */
   transition: all 1s;
 }
 
@@ -388,7 +388,7 @@ form button:hover {
   min-height: 40vh;
   position: relative;
   z-index: 5;
-  bottom: 92%;
+  /* bottom: 92%; */
   transition: all 1s;
 }
 

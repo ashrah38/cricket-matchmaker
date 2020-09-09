@@ -16,7 +16,61 @@
       </span>
     </div>
     <div class="container">
-      <div id="showcase"></div>
+      <div id="showcase">
+        <h3>How It Works!</h3>
+        <!-- creating a slide show -->
+        <div class="slideshow-container">
+          <!-- Full-width images with number and caption text -->
+          <div class="mySlides fade">
+            <img
+              src="../public/assets/images/showcase1.jpg"
+              style="width: 100%"
+            />
+            <div class="text">Register an account</div>
+          </div>
+
+          <div class="mySlides fade">
+            <img
+              src="../public/assets/images/showcase3.jpg"
+              style="width: 100%"
+            />
+            <div class="text">
+              Navigate to calendar and choose your availability
+            </div>
+          </div>
+
+          <div class="mySlides fade">
+            <img
+              src="../public/assets/images/showcase2.jpg"
+              style="width: 100%"
+            />
+            <div class="text">Add friends!</div>
+          </div>
+          <div class="mySlides fade">
+            <img
+              src="../public/assets/images/showcase4.jpg"
+              style="width: 100%"
+            />
+            <div class="text">
+              You can view the schedules of your friends, and if you guys are
+              free at the same time, you are notified on the Free to Play panel!
+            </div>
+          </div>
+          <!-- Next and previous buttons -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br />
+
+        <!-- The dots/circles -->
+        <div style="text-align: center">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+        <!-- end of slide show -->
+      </div>
       <div id="left">
         <div id="signin">
           <div class="logo">
