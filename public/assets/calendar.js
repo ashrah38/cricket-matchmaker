@@ -1,4 +1,4 @@
-const url = "https://evening-shore-75940.herokuapp.com/user/calendar/schedule";
+const url = "http://www.cricketmatchmaker.com/user/calendar/schedule";
 const scheduleBox = document.getElementById("scheduleBox");
 let closeBtns = undefined;
 let cbArray = undefined;

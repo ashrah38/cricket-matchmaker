@@ -1,10 +1,9 @@
 const findfriendsBtn = document.getElementById("findfriends");
 const availabilitiesDisplay = document.getElementById("availabilities");
 const scheduleDisplay = document.getElementById("schedule-display");
-const urlFF = "https://evening-shore-75940.herokuapp.com/user/home/friends";
-const urlDA =
-  "https://evening-shore-75940.herokuapp.com/user/home/availability";
-const urlGT = "https://evening-shore-75940.herokuapp.com/user/home/timings";
+const urlFF = "http://www.cricketmatchmaker.com/user/home/friends";
+const urlDA = "http://www.cricketmatchmaker.com/user/home/availability";
+const urlGT = "http://www.cricketmatchmaker.com/user/home/timings";
 findfriendsBtn.addEventListener("click", (click) => {
   click.preventDefault();
   getFriends();
@@ -45,16 +44,15 @@ dropBtn.addEventListener("click", () => {
 
 logoutBar.addEventListener("click", () => {
   console.log("event registered");
-  fetch("https://evening-shore-75940.herokuapp.com/user/home/logout").then(
-    () => (window.location = "https://evening-shore-75940.herokuapp.com/")
+  fetch("http://www.cricketmatchmaker.com/user/home/logout").then(
+    () => (window.location = "http://www.cricketmatchmaker.com/")
   );
 });
 
 changepassBar.addEventListener("click", () => {
-  fetch("https://evening-shore-75940.herokuapp.com/user/changepassword").then(
+  fetch("http://www.cricketmatchmaker.com/user/changepassword").then(
     () =>
-      (window.location =
-        "https://evening-shore-75940.herokuapp.com/user/changepassword")
+      (window.location = "http://www.cricketmatchmaker.com/user/changepassword")
   );
 });
 // END OF NAV BAR FUNCTIONS
@@ -217,7 +215,7 @@ function displaySchedule() {
     button.addEventListener("click", (e) => {
       let btnClicked = e.target;
       usernameForSchedule = btnClicked.id;
-      let urlDS = `https://evening-shore-75940.herokuapp.com/user/home/schedule/${usernameForSchedule}`;
+      let urlDS = `http://www.cricketmatchmaker.com/user/home/schedule/${usernameForSchedule}`;
       fetch(urlDS, {
         method: "POST",
         body: JSON.stringify({
