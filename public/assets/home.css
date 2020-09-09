@@ -514,3 +514,6 @@ form button:hover {
     right: 85%;
   }
 }
+
+@media screen and (max-width: 500px) {
+}
